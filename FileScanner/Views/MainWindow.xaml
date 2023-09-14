@@ -20,9 +20,19 @@
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock Text="Selected folder : "/>
             <TextBlock Text="{Binding SelectedFolder}"/>
+            <TextBlock Text="{Binding NbElements}" />
         </StatusBar>
         <Grid>
-            <ListView ItemsSource="{Binding FolderItems}"/>
+            <ListView ItemsSource="{Binding FolderItems}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="16" Margin="3" Source="{Binding Image}"/>
+                            <TextBlock Text="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </DockPanel>
 </Window>

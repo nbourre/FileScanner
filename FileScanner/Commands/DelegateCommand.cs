@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace FileScanner.Commands
 {
-    public class DelegateCommand<T> : System.Windows.Input.ICommand
+    public class DelegateCommand<T> : ICommand
     {
         private readonly Predicate<T> _canExecute;
         private readonly Action<T> _execute;
